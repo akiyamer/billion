@@ -10,3 +10,14 @@ export interface VElement {
   // num of child nodes
   count: number
 }
+
+export enum MoveType {
+  REMOVE = 0,
+  INSERT = 1
+}
+
+export interface IMoveItem {
+  type: MoveType
+  index: number
+  item?: VElement
+}

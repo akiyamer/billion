@@ -1,9 +1,7 @@
-import { VElement, VNode, VProps } from './struct'
+import { VElement, VNode, VProps } from '../types/struct'
 import { setAttr } from './utils'
 
 function h(tag: string, props?: VProps, children?: VNode[]): VElement {
-  //TODO: caller compatible
-
   let count = 0
   children.forEach(child => {
     if (typeof child !== 'string') count += child.count
