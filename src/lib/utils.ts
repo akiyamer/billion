@@ -42,7 +42,7 @@ export function listDiff(oldList: VElement[], newList: VElement[], key: string) 
         children.push(newList[newItemIndex])
       }
     } else {
-      children.push(newFree.shift())
+      children.push(newFree.shift() || null)
     }
   })
 
@@ -53,6 +53,7 @@ export function listDiff(oldList: VElement[], newList: VElement[], key: string) 
       simulateList.splice(i, 1)
     }
   })
+  // simulateList.filter(())
 
   // simmulateList和newList的滑动对比
   let j = 0
@@ -94,7 +95,7 @@ export function listDiff(oldList: VElement[], newList: VElement[], key: string) 
   return { moves, children }
 }
 
-function getKeyIndexAndFree(list: VElement[], key: string) {
+export function getKeyIndexAndFree(list: VElement[], key: string) {
   const keyIndex = {}
   const free = []
 
@@ -110,6 +111,6 @@ function getKeyIndexAndFree(list: VElement[], key: string) {
   return { keyIndex, free }
 }
 
-function getItemKey(item: VElement, key: string | ((item: VElement) => any)) {
+export function getItemKey(item: VElement, key: string | ((item: VElement) => any)) {
   return typeof key === 'string' ? item[key] : key(item)
 }
