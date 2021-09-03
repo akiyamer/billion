@@ -154,6 +154,13 @@
   dependencies:
     "@babel/types" "^7.15.0"
 
+"@babel/helper-module-imports@^7.10.4":
+  version "7.15.4"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-module-imports/-/helper-module-imports-7.15.4.tgz#e18007d230632dea19b47853b984476e7b4e103f"
+  integrity sha1-4YAH0jBjLeoZtHhTuYRHbntOED8=
+  dependencies:
+    "@babel/types" "^7.15.4"
+
 "@babel/helper-module-imports@^7.12.13", "@babel/helper-module-imports@^7.14.5":
   version "7.14.5"
   resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-module-imports/-/helper-module-imports-7.14.5.tgz#6d1a44df6a38c957aa7c312da076429f11b422f3"
@@ -723,6 +730,18 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 
+"@babel/plugin-transform-runtime@^7.15.0":
+  version "7.15.0"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fplugin-transform-runtime/-/plugin-transform-runtime-7.15.0.tgz#d3aa650d11678ca76ce294071fda53d7804183b3"
+  integrity sha1-06plDRFnjKds4pQHH9pT14BBg7M=
+  dependencies:
+    "@babel/helper-module-imports" "^7.14.5"
+    "@babel/helper-plugin-utils" "^7.14.5"
+    babel-plugin-polyfill-corejs2 "^0.2.2"
+    babel-plugin-polyfill-corejs3 "^0.2.2"
+    babel-plugin-polyfill-regenerator "^0.2.2"
+    semver "^6.3.0"
+
 "@babel/plugin-transform-shorthand-properties@^7.14.5":
   version "7.14.5"
   resolved "https://npm.corp.kuaishou.com/@babel%2fplugin-transform-shorthand-properties/-/plugin-transform-shorthand-properties-7.14.5.tgz#97f13855f1409338d8cadcbaca670ad79e091a58"
@@ -882,6 +901,13 @@
     "@babel/helper-validator-option" "^7.14.5"
     "@babel/plugin-transform-typescript" "^7.15.0"
 
+"@babel/runtime@^7.15.3":
+  version "7.15.4"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fruntime/-/runtime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
+  integrity sha1-/RfRa/34eObdAtGXU6OfqKjZyEo=
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.8.4":
   version "7.15.3"
   resolved "https://npm.corp.kuaishou.com/@babel%2fruntime/-/runtime-7.15.3.tgz#2e1c2880ca118e5b2f9988322bd8a7656a32502b"
@@ -921,15 +947,18 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
+"@babel/types@^7.15.4":
+  version "7.15.4"
+  resolved "https://npm.corp.kuaishou.com/@babel%2ftypes/-/types-7.15.4.tgz#74eeb86dbd6748d2741396557b9860e57fce0a0d"
+  integrity sha1-dO64bb1nSNJ0E5ZVe5hg5X/OCg0=
+  dependencies:
+    "@babel/helper-validator-identifier" "^7.14.9"
+    to-fast-properties "^2.0.0"
+
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"
   resolved "https://npm.corp.kuaishou.com/@bcoe%2fv8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha1-daLotRy3WKdVPWgEpZMteqznXDk=
-
-"@bitauth/libauth@^1.17.1":
-  version "1.18.1"
-  resolved "https://npm.corp.kuaishou.com/@bitauth%2flibauth/-/libauth-1.18.1.tgz#b1c632ed85f73c16a0ff89d81e8a92809fa15108"
-  integrity sha1-scYy7YX3PBag/4nYHoqSgJ+hUQg=
 
 "@commitlint/execute-rule@^13.0.0":
   version "13.0.0"
@@ -1364,6 +1393,11 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
+"@mdn/browser-compat-data@^4.0.1":
+  version "4.0.2"
+  resolved "https://npm.corp.kuaishou.com/@mdn%2fbrowser-compat-data/-/browser-compat-data-4.0.2.tgz#54431f690853e11b61f93b29ded25978f78c38e0"
+  integrity sha1-VEMfaQhT4Rth+Tsp3tJZePeMOOA=
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://npm.corp.kuaishou.com/@nodelib%2ffs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -1384,6 +1418,64 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@rollup/plugin-babel@^5.3.0":
+  version "5.3.0"
+  resolved "https://npm.corp.kuaishou.com/@rollup%2fplugin-babel/-/plugin-babel-5.3.0.tgz#9cb1c5146ddd6a4968ad96f209c50c62f92f9879"
+  integrity sha1-nLHFFG3daklorZbyCcUMYvkvmHk=
+  dependencies:
+    "@babel/helper-module-imports" "^7.10.4"
+    "@rollup/pluginutils" "^3.1.0"
+
+"@rollup/plugin-commonjs@^20.0.0":
+  version "20.0.0"
+  resolved "https://npm.corp.kuaishou.com/@rollup%2fplugin-commonjs/-/plugin-commonjs-20.0.0.tgz#3246872dcbcb18a54aaa6277a8c7d7f1b155b745"
+  integrity sha1-MkaHLcvLGKVKqmJ3qMfX8bFVt0U=
+  dependencies:
+    "@rollup/pluginutils" "^3.1.0"
+    commondir "^1.0.1"
+    estree-walker "^2.0.1"
+    glob "^7.1.6"
+    is-reference "^1.2.1"
+    magic-string "^0.25.7"
+    resolve "^1.17.0"
+
+"@rollup/plugin-node-resolve@^13.0.4":
+  version "13.0.4"
+  resolved "https://npm.corp.kuaishou.com/@rollup%2fplugin-node-resolve/-/plugin-node-resolve-13.0.4.tgz#b10222f4145a019740acb7738402130d848660c0"
+  integrity sha1-sQIi9BRaAZdArLdzhAITDYSGYMA=
+  dependencies:
+    "@rollup/pluginutils" "^3.1.0"
+    "@types/resolve" "1.17.1"
+    builtin-modules "^3.1.0"
+    deepmerge "^4.2.2"
+    is-module "^1.0.0"
+    resolve "^1.19.0"
+
+"@rollup/plugin-typescript@^8.2.5":
+  version "8.2.5"
+  resolved "https://npm.corp.kuaishou.com/@rollup%2fplugin-typescript/-/plugin-typescript-8.2.5.tgz#e0319761b2b5105615e5a0c371ae05bc2984b7de"
+  integrity sha1-4DGXYbK1EFYV5aDDca4FvCmEt94=
+  dependencies:
+    "@rollup/pluginutils" "^3.1.0"
+    resolve "^1.17.0"
+
+"@rollup/pluginutils@^3.1.0":
+  version "3.1.0"
+  resolved "https://npm.corp.kuaishou.com/@rollup%2fpluginutils/-/pluginutils-3.1.0.tgz#706b4524ee6dc8b103b3c995533e5ad680c02b9b"
+  integrity sha1-cGtFJO5tyLEDs8mVUz5a1oDAK5s=
+  dependencies:
+    "@types/estree" "0.0.39"
+    estree-walker "^1.0.1"
+    picomatch "^2.2.2"
+
+"@rollup/pluginutils@^4.1.1":
+  version "4.1.1"
+  resolved "https://npm.corp.kuaishou.com/@rollup%2fpluginutils/-/pluginutils-4.1.1.tgz#1d4da86dd4eded15656a57d933fda2b9a08d47ec"
+  integrity sha1-HU2obdTt7RVlalfZM/2iuaCNR+w=
+  dependencies:
+    estree-walker "^2.0.1"
+    picomatch "^2.2.2"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -1426,7 +1518,7 @@
   resolved "https://npm.corp.kuaishou.com/@tootallnate%2fonce/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha1-zLkURTYBeaBOf+av94wA/8Hur4I=
 
-"@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14":
+"@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14", "@types/babel__core@^7.1.15":
   version "7.1.15"
   resolved "https://npm.corp.kuaishou.com/@types%2fbabel__core/-/babel__core-7.1.15.tgz#2ccfb1ad55a02c83f8e0ad327cbc332f55eb1024"
   integrity sha1-LM+xrVWgLIP44K0yfLwzL1XrECQ=
@@ -1458,6 +1550,16 @@
   integrity sha1-/81HC7s/i/MEgWePtVAieMqDOkM=
   dependencies:
     "@babel/types" "^7.3.0"
+
+"@types/estree@*":
+  version "0.0.50"
+  resolved "https://npm.corp.kuaishou.com/@types%2festree/-/estree-0.0.50.tgz#1e0caa9364d3fccd2931c3ed96fdbeaa5d4cca83"
+  integrity sha1-Hgyqk2TT/M0pMcPtlv2+ql1MyoM=
+
+"@types/estree@0.0.39":
+  version "0.0.39"
+  resolved "https://npm.corp.kuaishou.com/@types%2festree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
+  integrity sha1-4Xfmme4bjCLSMXTKqnQiZEOJUJ8=
 
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
@@ -1508,10 +1610,20 @@
   resolved "https://npm.corp.kuaishou.com/@types%2fnode/-/node-16.7.2.tgz#0465a39b5456b61a04d98bd5545f8b34be340cb7"
   integrity sha1-BGWjm1RWthoE2YvVVF+LNL40DLc=
 
+"@types/node@^15.9.0":
+  version "15.14.9"
+  resolved "https://npm.corp.kuaishou.com/@types%2fnode/-/node-15.14.9.tgz#bc43c990c3c9be7281868bbc7b8fdd6e2b57adfa"
+  integrity sha1-vEPJkMPJvnKBhou8e4/dbitXrfo=
+
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
   resolved "https://npm.corp.kuaishou.com/@types%2fnormalize-package-data/-/normalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
   integrity sha1-0zV0eaD9/dWQf+Z+F+CoXJBuEwE=
+
+"@types/object-path@^0.11.1":
+  version "0.11.1"
+  resolved "https://npm.corp.kuaishou.com/@types%2fobject-path/-/object-path-0.11.1.tgz#eea5b357518597fc9c0a067ea3147f599fc1514f"
+  integrity sha1-7qWzV1GFl/ycCgZ+oxR/WZ/BUU8=
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -1523,10 +1635,27 @@
   resolved "https://npm.corp.kuaishou.com/@types%2fprettier/-/prettier-2.3.2.tgz#fc8c2825e4ed2142473b4a81064e6e081463d1b3"
   integrity sha1-/IwoJeTtIUJHO0qBBk5uCBRj0bM=
 
+"@types/resolve@1.17.1":
+  version "1.17.1"
+  resolved "https://npm.corp.kuaishou.com/@types%2fresolve/-/resolve-1.17.1.tgz#3afd6ad8967c77e4376c598a82ddd58f46ec45d6"
+  integrity sha1-Ov1q2JZ8d+Q3bFmKgt3Vj0bsRdY=
+  dependencies:
+    "@types/node" "*"
+
+"@types/semver@^7.3.8":
+  version "7.3.8"
+  resolved "https://npm.corp.kuaishou.com/@types%2fsemver/-/semver-7.3.8.tgz#508a27995498d7586dcecd77c25e289bfaf90c59"
+  integrity sha1-UIonmVSY11htzs13wl4om/r5DFk=
+
 "@types/stack-utils@^2.0.0":
   version "2.0.1"
   resolved "https://npm.corp.kuaishou.com/@types%2fstack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
   integrity sha1-IPGClPeX8iCbX2XI47XI6CYdEnw=
+
+"@types/ua-parser-js@^0.7.36":
+  version "0.7.36"
+  resolved "https://npm.corp.kuaishou.com/@types%2fua-parser-js/-/ua-parser-js-0.7.36.tgz#9bd0b47f26b5a3151be21ba4ce9f5fa457c5f190"
+  integrity sha1-m9C0fya1oxUb4hukzp9fpFfF8ZA=
 
 "@types/yargs-parser@*":
   version "20.2.1"
@@ -1608,6 +1737,11 @@
   dependencies:
     "@typescript-eslint/types" "4.29.2"
     eslint-visitor-keys "^2.0.0"
+
+"@wessberg/stringutil@^1.0.19":
+  version "1.0.19"
+  resolved "https://npm.corp.kuaishou.com/@wessberg%2fstringutil/-/stringutil-1.0.19.tgz#baadcb6f4471fe2d46462a7d7a8294e4b45b29ad"
+  integrity sha1-uq3Lb0Rx/i1GRip9eoKU5LRbKa0=
 
 JSONStream@^1.0.4:
   version "1.3.5"
@@ -2106,6 +2240,33 @@ browser-process-hrtime@^1.0.0:
   resolved "https://npm.corp.kuaishou.com/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz#3c9b4b7d782c8121e56f10106d84c0d0ffc94626"
   integrity sha1-PJtLfXgsgSHlbxAQbYTA0P/JRiY=
 
+browserslist-generator@^1.0.60:
+  version "1.0.60"
+  resolved "https://npm.corp.kuaishou.com/browserslist-generator/-/browserslist-generator-1.0.60.tgz#5e71819e806d7643b75855b954a95439fb1d2fc6"
+  integrity sha1-XnGBnoBtdkO3WFW5VKlUOfsdL8Y=
+  dependencies:
+    "@mdn/browser-compat-data" "^4.0.1"
+    "@types/object-path" "^0.11.1"
+    "@types/semver" "^7.3.8"
+    "@types/ua-parser-js" "^0.7.36"
+    browserslist "4.16.8"
+    caniuse-lite "^1.0.30001252"
+    isbot "3.3.2"
+    object-path "^0.11.7"
+    semver "^7.3.5"
+    ua-parser-js "^0.7.28"
+
+browserslist@4.16.8, browserslist@^4.16.8:
+  version "4.16.8"
+  resolved "https://npm.corp.kuaishou.com/browserslist/-/browserslist-4.16.8.tgz#cb868b0b554f137ba6e33de0ecff2eda403c4fb0"
+  integrity sha1-y4aLC1VPE3um4z3g7P8u2kA8T7A=
+  dependencies:
+    caniuse-lite "^1.0.30001251"
+    colorette "^1.3.0"
+    electron-to-chromium "^1.3.811"
+    escalade "^3.1.1"
+    node-releases "^1.1.75"
+
 browserslist@^4.16.6:
   version "4.16.7"
   resolved "https://npm.corp.kuaishou.com/browserslist/-/browserslist-4.16.7.tgz#108b0d1ef33c4af1b587c54f390e7041178e4335"
@@ -2116,17 +2277,6 @@ browserslist@^4.16.6:
     electron-to-chromium "^1.3.793"
     escalade "^3.1.1"
     node-releases "^1.1.73"
-
-browserslist@^4.16.8:
-  version "4.16.8"
-  resolved "https://npm.corp.kuaishou.com/browserslist/-/browserslist-4.16.8.tgz#cb868b0b554f137ba6e33de0ecff2eda403c4fb0"
-  integrity sha1-y4aLC1VPE3um4z3g7P8u2kA8T7A=
-  dependencies:
-    caniuse-lite "^1.0.30001251"
-    colorette "^1.3.0"
-    electron-to-chromium "^1.3.811"
-    escalade "^3.1.1"
-    node-releases "^1.1.75"
 
 bser@2.1.1:
   version "2.1.1"
@@ -2147,6 +2297,11 @@ buffer@^5.5.0:
   dependencies:
     base64-js "^1.3.1"
     ieee754 "^1.1.13"
+
+builtin-modules@^3.1.0:
+  version "3.2.0"
+  resolved "https://npm.corp.kuaishou.com/builtin-modules/-/builtin-modules-3.2.0.tgz#45d5db99e7ee5e6bc4f362e008bf917ab5049887"
+  integrity sha1-RdXbmefuXmvE82LgCL+RerUEmIc=
 
 cacheable-request@^6.0.0:
   version "6.1.0"
@@ -2213,7 +2368,7 @@ caniuse-lite@^1.0.30001248:
   resolved "https://npm.corp.kuaishou.com/caniuse-lite/-/caniuse-lite-1.0.30001251.tgz#6853a606ec50893115db660f82c094d18f096d85"
   integrity sha1-aFOmBuxQiTEV22YPgsCU0Y8JbYU=
 
-caniuse-lite@^1.0.30001251:
+caniuse-lite@^1.0.30001251, caniuse-lite@^1.0.30001252:
   version "1.0.30001252"
   resolved "https://npm.corp.kuaishou.com/caniuse-lite/-/caniuse-lite-1.0.30001252.tgz#cb16e4e3dafe948fc4a9bb3307aea054b912019a"
   integrity sha1-yxbk49r+lI/EqbszB66gVLkSAZo=
@@ -2227,7 +2382,7 @@ chalk@^2.0.0, chalk@^2.4.1, chalk@^2.4.2:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chalk@^4.0.0, chalk@^4.1.0:
+chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.2:
   version "4.1.2"
   resolved "https://npm.corp.kuaishou.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha1-qsTit3NKdAhnrrFr8CqtVWoeegE=
@@ -2484,6 +2639,13 @@ compare-func@^2.0.0:
   dependencies:
     array-ify "^1.0.0"
     dot-prop "^5.1.0"
+
+compatfactory@^0.0.9:
+  version "0.0.9"
+  resolved "https://npm.corp.kuaishou.com/compatfactory/-/compatfactory-0.0.9.tgz#8dff81a4b1b8f5293a2c6f1cd83c6f8f97f8635d"
+  integrity sha1-jf+BpLG49Sk6LG8c2Dxvj5f4Y10=
+  dependencies:
+    helpertypes "^0.0.4"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -2764,6 +2926,13 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
+
+crosspath@^0.0.9:
+  version "0.0.9"
+  resolved "https://npm.corp.kuaishou.com/crosspath/-/crosspath-0.0.9.tgz#2ac42b39b3b83eeb25851a4058ccd0722baea520"
+  integrity sha1-KsQrObO4PuslhRpAWMzQciuupSA=
+  dependencies:
+    "@types/node" "^15.9.0"
 
 crypto-random-string@^2.0.0:
   version "2.0.0"
@@ -3439,6 +3608,16 @@ estraverse@^5.1.0, estraverse@^5.2.0:
   resolved "https://npm.corp.kuaishou.com/estraverse/-/estraverse-5.2.0.tgz#307df42547e6cc7324d3cf03c155d5cdb8c53880"
   integrity sha1-MH30JUfmzHMk088DwVXVzbjFOIA=
 
+estree-walker@^1.0.1:
+  version "1.0.1"
+  resolved "https://npm.corp.kuaishou.com/estree-walker/-/estree-walker-1.0.1.tgz#31bc5d612c96b704106b477e6dd5d8aa138cb700"
+  integrity sha1-MbxdYSyWtwQQa0d+bdXYqhOMtwA=
+
+estree-walker@^2.0.1:
+  version "2.0.2"
+  resolved "https://npm.corp.kuaishou.com/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
+  integrity sha1-UvAQF4wqTBF6d1fP6UKtt9LaTKw=
+
 esutils@^2.0.2, esutils@^2.0.3:
   version "2.0.3"
   resolved "https://npm.corp.kuaishou.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
@@ -4050,6 +4229,11 @@ hasha@^5.0.0:
     is-stream "^2.0.0"
     type-fest "^0.8.0"
 
+helpertypes@^0.0.4:
+  version "0.0.4"
+  resolved "https://npm.corp.kuaishou.com/helpertypes/-/helpertypes-0.0.4.tgz#99c04bfdb332790e0eb6857ec939143e5feeb535"
+  integrity sha1-mcBL/bMyeQ4OtoV+yTkUPl/utTU=
+
 highlight.js@^10.2.0:
   version "10.7.3"
   resolved "https://npm.corp.kuaishou.com/highlight.js/-/highlight.js-10.7.3.tgz#697272e3991356e40c3cac566a74eef681756531"
@@ -4356,6 +4540,11 @@ is-interactive@^1.0.0:
   resolved "https://npm.corp.kuaishou.com/is-interactive/-/is-interactive-1.0.0.tgz#cea6e6ae5c870a7b0a0004070b7b587e0252912e"
   integrity sha1-zqbmrlyHCnsKAAQHC3tYfgJSkS4=
 
+is-module@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.corp.kuaishou.com/is-module/-/is-module-1.0.0.tgz#3258fb69f78c14d5b815d664336b4cffb6441591"
+  integrity sha1-Mlj7afeMFNW4FdZkM2tM/7ZEFZE=
+
 is-negative-zero@^2.0.1:
   version "2.0.1"
   resolved "https://npm.corp.kuaishou.com/is-negative-zero/-/is-negative-zero-2.0.1.tgz#3de746c18dda2319241a53675908d8f766f11c24"
@@ -4412,6 +4601,13 @@ is-promise@^4.0.0:
   version "4.0.0"
   resolved "https://npm.corp.kuaishou.com/is-promise/-/is-promise-4.0.0.tgz#42ff9f84206c1991d26debf520dd5c01042dd2f3"
   integrity sha1-Qv+fhCBsGZHSbev1IN1cAQQt0vM=
+
+is-reference@^1.2.1:
+  version "1.2.1"
+  resolved "https://npm.corp.kuaishou.com/is-reference/-/is-reference-1.2.1.tgz#8b2dac0b371f4bc994fdeaba9eb542d03002d0b7"
+  integrity sha1-iy2sCzcfS8mU/eq6nrVC0DAC0Lc=
+  dependencies:
+    "@types/estree" "*"
 
 is-regex@^1.1.3:
   version "1.1.4"
@@ -4483,6 +4679,11 @@ isarray@~1.0.0:
   version "1.0.0"
   resolved "https://npm.corp.kuaishou.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   integrity sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
+
+isbot@3.3.2:
+  version "3.3.2"
+  resolved "https://npm.corp.kuaishou.com/isbot/-/isbot-3.3.2.tgz#8432375aa1a83985d0a4c38bdf8e51cc0f3aa946"
+  integrity sha1-hDI3WqGoOYXQpMOL345RzA86qUY=
 
 isexe@^2.0.0:
   version "2.0.0"
@@ -5264,6 +5465,13 @@ lunr@^2.3.9:
   resolved "https://npm.corp.kuaishou.com/lunr/-/lunr-2.3.9.tgz#18b123142832337dd6e964df1a5a7707b25d35e1"
   integrity sha1-GLEjFCgyM33W6WTfGlp3B7JdNeE=
 
+magic-string@^0.25.7:
+  version "0.25.7"
+  resolved "https://npm.corp.kuaishou.com/magic-string/-/magic-string-0.25.7.tgz#3f497d6fd34c669c6798dcb821f2ef31f5445051"
+  integrity sha1-P0l9b9NMZpxnmNy4IfLvMfVEUFE=
+  dependencies:
+    sourcemap-codec "^1.4.4"
+
 make-dir@^3.0.0, make-dir@^3.0.2:
   version "3.1.0"
   resolved "https://npm.corp.kuaishou.com/make-dir/-/make-dir-3.1.0.tgz#415e967046b3a7f1d185277d84aa58203726a13f"
@@ -5645,6 +5853,11 @@ object-keys@^1.0.12, object-keys@^1.1.1:
   version "1.1.1"
   resolved "https://npm.corp.kuaishou.com/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
   integrity sha1-HEfyct8nfzsdrwYWd9nILiMixg4=
+
+object-path@^0.11.7:
+  version "0.11.7"
+  resolved "https://npm.corp.kuaishou.com/object-path/-/object-path-0.11.7.tgz#5f211161f34bb395e4b13a5f565b79d933b6f65d"
+  integrity sha1-XyERYfNLs5XksTpfVlt52TO29l0=
 
 object.assign@^4.1.0, object.assign@^4.1.2:
   version "4.1.2"
@@ -6386,7 +6599,7 @@ resolve-global@^1.0.0:
   dependencies:
     global-dirs "^0.1.1"
 
-resolve@^1.1.6, resolve@^1.10.0, resolve@^1.14.2, resolve@^1.20.0:
+resolve@^1.1.6, resolve@^1.10.0, resolve@^1.14.2, resolve@^1.17.0, resolve@^1.19.0, resolve@^1.20.0:
   version "1.20.0"
   resolved "https://npm.corp.kuaishou.com/resolve/-/resolve-1.20.0.tgz#629a013fb3f70755d6f0b7935cc1c2c5378b1975"
   integrity sha1-YpoBP7P3B1XW8LeTXMHCxTeLGXU=
@@ -6428,6 +6641,33 @@ rimraf@^3.0.0, rimraf@^3.0.2:
   integrity sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho=
   dependencies:
     glob "^7.1.3"
+
+rollup-plugin-ts@^1.4.1:
+  version "1.4.1"
+  resolved "https://npm.corp.kuaishou.com/rollup-plugin-ts/-/rollup-plugin-ts-1.4.1.tgz#7feedabd004a4d8f79de61345b307bac05eeecd2"
+  integrity sha1-f+7avQBKTY953mE0WzB7rAXu7NI=
+  dependencies:
+    "@babel/core" "^7.15.0"
+    "@babel/plugin-proposal-async-generator-functions" "^7.14.9"
+    "@babel/plugin-proposal-json-strings" "^7.14.5"
+    "@babel/plugin-proposal-object-rest-spread" "^7.14.7"
+    "@babel/plugin-proposal-optional-catch-binding" "^7.14.5"
+    "@babel/plugin-proposal-unicode-property-regex" "^7.14.5"
+    "@babel/plugin-syntax-dynamic-import" "^7.8.3"
+    "@babel/plugin-transform-runtime" "^7.15.0"
+    "@babel/preset-env" "^7.15.0"
+    "@babel/runtime" "^7.15.3"
+    "@rollup/pluginutils" "^4.1.1"
+    "@types/babel__core" "^7.1.15"
+    "@wessberg/stringutil" "^1.0.19"
+    browserslist "^4.16.8"
+    browserslist-generator "^1.0.60"
+    chalk "^4.1.2"
+    compatfactory "^0.0.9"
+    crosspath "^0.0.9"
+    magic-string "^0.25.7"
+    ts-clone-node "^0.3.25"
+    tslib "^2.3.1"
 
 run-async@^2.2.0:
   version "2.4.1"
@@ -6613,6 +6853,11 @@ source-map@^0.7.3:
   version "0.7.3"
   resolved "https://npm.corp.kuaishou.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha1-UwL4FpAxc1ImVECS5kmB91F1A4M=
+
+sourcemap-codec@^1.4.4:
+  version "1.4.8"
+  resolved "https://npm.corp.kuaishou.com/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz#ea804bd94857402e6992d05a38ef1ae35a9ab4c4"
+  integrity sha1-6oBL2UhXQC5pktBaOO8a41qatMQ=
 
 spawn-wrap@^2.0.0:
   version "2.0.0"
@@ -7078,6 +7323,13 @@ trim-repeated@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.2"
 
+ts-clone-node@^0.3.25:
+  version "0.3.25"
+  resolved "https://npm.corp.kuaishou.com/ts-clone-node/-/ts-clone-node-0.3.25.tgz#c20cb37f4656a9fcfbe8a45f110b72cadcbf6f1a"
+  integrity sha1-wgyzf0ZWqfz76KRfEQtyyty/bxo=
+  dependencies:
+    compatfactory "^0.0.9"
+
 ts-node@^9.0.0:
   version "9.1.1"
   resolved "https://npm.corp.kuaishou.com/ts-node/-/ts-node-9.1.1.tgz#51a9a450a3e959401bda5f004a72d54b936d376d"
@@ -7103,6 +7355,11 @@ tslib@^1.8.1, tslib@^1.9.0:
   version "1.14.1"
   resolved "https://npm.corp.kuaishou.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
+
+tslib@^2.3.1:
+  version "2.3.1"
+  resolved "https://npm.corp.kuaishou.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha1-6KM1rdXOrlGqJh0ypJAVjvBC7wE=
 
 tsutils@^3.21.0:
   version "3.21.0"
@@ -7203,6 +7460,11 @@ typescript@^4.0.2:
   version "4.3.5"
   resolved "https://npm.corp.kuaishou.com/typescript/-/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
   integrity sha1-TRw3zBbok5c8RaBohrcRMjTxGfQ=
+
+ua-parser-js@^0.7.28:
+  version "0.7.28"
+  resolved "https://npm.corp.kuaishou.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
+  integrity sha1-i6BOZT81ziECOcZGYWhb+RId7DE=
 
 uglify-js@^3.1.4:
   version "3.14.1"
