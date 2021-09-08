@@ -27,10 +27,10 @@ function dfsWalk(oldNode: VNode, newNode: VNode, index: number, patches: Patches
 
     // ignore children tag
     if (!oldNode.ignoreChildren) {
-      diffChildren(oldNode.children, newNode.children, index, patches)
+      diffChildren(oldNode.children, newNode.children, index, patches, currentPatch)
     }
   } else {
-    
+    currentPatch.push({type: PatchType.REPLACE, payload: newNode})
   }
 
   if (currentPatch.length) {
@@ -38,8 +38,24 @@ function dfsWalk(oldNode: VNode, newNode: VNode, index: number, patches: Patches
   }
 }
 
-function diffChildren(oldNode: VNode[], newNode: VNode[], index: number, pathces: Patches) {
-  const {  } = listDiff(oldNode, newNode, 'key')
+function diffChildren(oldNode: VNode[], newNode: VNode[], index: number, pathces: Patches, currentPatch: IPatchItem[]) {
+  // newChildren是按照oldChildren的key顺序排列、由新child组成的列表
+  const { moves, children: newChildren } = listDiff(oldNode, newNode, 'key')
+  if (moves.length) {
+    currentPatch.push({type: PatchType.REORDER, payload: moves})
+  }
+
+  let leftNode: any = null
+  let currentNodeIndex = index
+  oldNode.forEach((oldChild, i) => {
+    const newChild = newChildren[i]
+    currentNodeIndex = (leftNode && leftNode.count)
+      ? currentNodeIndex + leftNode.count + 1
+      : currentNodeIndex + 1
+    // key相同的节点进行比对
+    dfsWalk(oldChild, newChild, currentNodeIndex, pathces)
+    leftNode = oldChild
+  })
 }
 
 function diffProps(oldNode: VElement, newNode: VElement) {
