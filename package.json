@@ -10,7 +10,7 @@
   "keywords": [],
   "scripts": {
     "build": "rollup -c",
-    "test": "jest",
+    "test": "jest --watch --verbose false",
     "test:lint": "eslint src --ext .ts",
     "test:prettier": "prettier \"src/**/*.ts\" --list-different"
   },

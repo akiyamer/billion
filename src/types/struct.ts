@@ -9,6 +9,7 @@ export interface VElement {
   key?: string
   // num of child nodes
   count: number
+  ignoreChildren?: boolean
 }
 
 export enum MoveType {
@@ -19,7 +20,7 @@ export enum MoveType {
 export interface IMoveItem {
   type: MoveType
   index: number
-  item?: VElement
+  item?: VNode
 }
 
 export enum PatchType {

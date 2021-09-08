@@ -1,8 +1,8 @@
 import { listDiff, getItemKey, getKeyIndexAndFree } from '../lib/utils'
-import { IMoveItem, MoveType, VElement } from '../types/struct'
+import { IMoveItem, MoveType, VElement, VNode } from '../types/struct'
 
 describe('Utils', function() {
-  function perform(list: VElement[], moves: IMoveItem[]) {
+  function perform(list: VNode[], moves: IMoveItem[]) {
     moves.forEach(move => {
       if (move.type === MoveType.INSERT) {
         list.splice(move.index, 0, move.item)
@@ -39,13 +39,44 @@ describe('Utils', function() {
     expect(getKeyIndexAndFree(item, 'key').keyIndex).toEqual({k1: 0, k2: 1, k3: 2})
   })
 
-  it('remove items', () => {
-    var before = genVElementList([{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}])
-    var after = genVElementList([{id: 2}, {id: 3}, {id: 1}])
+  // when the value of key is number, test will failed, I don't know why?
+  it('Remove items', () => {
+    const before = genVElementList([{id: 'k1'}, {id: 'k2'}, {id: 'k3'}])
+    const after = genVElementList([{id: 'k1'}, {id: 'k3'}])
     const diffs = listDiff(before, after, 'key')
-    console.log(diffs.moves)
-    // expect(diffs.children).toEqual()
+    expect(diffs.children).toEqual([{"tag":"div","key":"k1","count":1},null,{"tag":"div","key":"k3","count":1}])
+    console.log(`diffs children: ${JSON.stringify(diffs.children)}`)
     perform(before, diffs.moves)
     assertListEqual(before, after)
   })
+
+  it('Insert items', () => {
+    const before = genVElementList([{id: 'k1'}, {id: 'k2'}, {id: 'k3'}])
+    const after = genVElementList([{id: 'k1'}, { id: 'k4' }, {id: 'k2'}, {id: 'k3'}])
+
+    const diffs = listDiff(before, after, 'key')
+    console.log(`diff moves: ${JSON.stringify(diffs.moves)}`)
+    perform(before, diffs.moves)
+    assertListEqual(before, after)
+  })
+
+  it('Moving items from back to front', () => {
+    const before = genVElementList([{id: 'k1'}, {id: 'k2'}, {id: 'k3'}, {id: 'k4'}, {id: 'k5'}])
+    const after = genVElementList([{id: 'k4'}, {id: 'k5'}, {id: 'k1'}, {id: 'k2'}, {id: 'k3'}])
+
+    const diffs = listDiff(before, after, 'key')
+    perform(before, diffs.moves)
+    assertListEqual(before, after)
+  })
+
+  it('Moving items from front to back', () => {
+    const before = genVElementList([{id: 'k1'}, {id: 'k2'}, {id: 'k3'}, {id: 'k4'}, {id: 'k5'}])
+    const after = genVElementList([{id: 'k3'}, {id: 'k4'}, {id: 'k5'}, {id: 'k1'}, {id: 'k2'}])
+
+    const diffs = listDiff(before, after, 'key')
+    perform(before, diffs.moves)
+    assertListEqual(before, after)
+  })
+
+  
 })

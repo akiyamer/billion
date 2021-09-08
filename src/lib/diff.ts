@@ -1,4 +1,5 @@
 import { VElement, VNode, IPatchItem, Patches, PatchType } from "../types/struct";
+import { listDiff } from "./utils";
 
 function diff(oldTree: VNode, newTree: VNode) {
   const patches: Patches = []
@@ -24,10 +25,21 @@ function dfsWalk(oldNode: VNode, newNode: VNode, index: number, patches: Patches
       currentPatch.push({type: PatchType.PROPS, payload: propsPatches})
     }
 
-    
+    // ignore children tag
+    if (!oldNode.ignoreChildren) {
+      diffChildren(oldNode.children, newNode.children, index, patches)
+    }
   } else {
     
   }
+
+  if (currentPatch.length) {
+    patches[index] = currentPatch
+  }
+}
+
+function diffChildren(oldNode: VNode[], newNode: VNode[], index: number, pathces: Patches) {
+  const {  } = listDiff(oldNode, newNode, 'key')
 }
 
 function diffProps(oldNode: VElement, newNode: VElement) {

@@ -1,4 +1,4 @@
-import { IMoveItem, MoveType, VElement } from "../types/struct"
+import { IMoveItem, MoveType, VElement, VNode } from "../types/struct"
 
 export function setAttr(el: HTMLElement, key: string, value: any) {
   switch(key) {
@@ -21,16 +21,20 @@ export function setAttr(el: HTMLElement, key: string, value: any) {
 /**
  * 列表对比算法
  */
-export function listDiff(oldList: VElement[], newList: VElement[], key: string) {
+export function listDiff(oldList: VNode[], newList: VNode[], key: string) {
+  // 记录以旧代表为参照的变更
   const moves: IMoveItem[] = []
 
+  // 拿到新旧列表中key和index的对应关系
   const oldMap = getKeyIndexAndFree(oldList, key)
   const newMap = getKeyIndexAndFree(newList, key)
-  // newList item without key
+  // 新列表中没有key的节点
   const newFree = newMap.free
+  // { key: index } 的map
   const oldKeyIndex = oldMap.keyIndex
   const newKeyIndex = newMap.keyIndex
   
+  // 已旧列表的key为顺序替换为新列表中对应key的节点
   const children = []
   oldList.forEach(item => {
     const itemKey = getItemKey(item, key)
@@ -46,6 +50,7 @@ export function listDiff(oldList: VElement[], newList: VElement[], key: string) 
     }
   })
 
+  // 剔除children中为null的节点
   const simulateList = children.slice(0)
   simulateList.forEach((item, i) => {
     if (item === null) {
@@ -53,7 +58,6 @@ export function listDiff(oldList: VElement[], newList: VElement[], key: string) 
       simulateList.splice(i, 1)
     }
   })
-  // simulateList.filter(())
 
   // simmulateList和newList的滑动对比
   let j = 0
@@ -95,12 +99,13 @@ export function listDiff(oldList: VElement[], newList: VElement[], key: string) 
   return { moves, children }
 }
 
-export function getKeyIndexAndFree(list: VElement[], key: string) {
+export function getKeyIndexAndFree(list: VNode[], key: string) {
   const keyIndex = {}
   const free = []
 
   list.forEach((item, i) => {
     const itemKey = getItemKey(item, key)
+    // console.log(`itemKey: ${itemKey}`)
     if (itemKey) {
       keyIndex[itemKey] = i
     } else {
@@ -108,9 +113,11 @@ export function getKeyIndexAndFree(list: VElement[], key: string) {
     }
   })
 
+  // console.log(`keyIndex: ${JSON.stringify(keyIndex)} free: ${JSON.stringify(free)}`)
   return { keyIndex, free }
 }
 
-export function getItemKey(item: VElement, key: string | ((item: VElement) => any)) {
+export function getItemKey(item: VNode, key: string | ((item:VNode) => any)) {
+  if (typeof item === 'string' || !item) return ''
   return typeof key === 'string' ? item[key] : key(item)
 }
